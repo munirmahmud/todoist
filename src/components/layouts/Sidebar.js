@@ -31,9 +31,8 @@ export const Sidebar = () => {
             </div>
 
             <ul className="sidebar__projects">
-                {/* TODO: Projects Will be here... */}
+                {showProjects && <Projects />}
             </ul>            
-            <Projects />
         </div>
-    )
-};
+    );
+}
