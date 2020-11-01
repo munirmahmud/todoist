@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { collatedTasks } from '../constants';
-import { useProjectsValue, useSelectedProjectsValue } from '../context';
+import { useProjectsValue, useSelectedProjectValue } from '../context';
 import { collatedTasksExist, getCollatedTitle, getTitle } from '../helpers';
 import { useTasks } from '../hooks';
 import { Checkbox } from './Checkbox';
 
 export const Tasks = () => {
-    const { selectedProject } = useSelectedProjectsValue();
+    const { selectedProject } = useSelectedProjectValue();
     const { projects } = useProjectsValue();
 
     const {tasks} = useTasks(selectedProject);
