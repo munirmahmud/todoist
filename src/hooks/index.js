@@ -16,7 +16,7 @@ export const useTasks = selectedProject => {
             unSubscribe = selectedProject && !collatedTasksExist(selectedProject) ? 
             (unSubscribe = unSubscribe.where('projectId', '==', selectedProject)) : 
             selectedProject === 'TODAY' ? 
-            (unSubscribe = unSubscribe.where('date', '==', moment.format('DD/MM/YYYY'))) : 
+            (unSubscribe = unSubscribe.where('date', '==', moment().format('DD/MM/YYYY'))) : 
             selectedProject === 'INBOX' || selectedProject === 0 ? 
             (unSubscribe = unSubscribe.where('date', '==', '')) : unSubscribe;
 

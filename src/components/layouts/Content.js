@@ -4,7 +4,7 @@ import { Sidebar } from './Sidebar';
 
 const Content = () => {
     return (
-        <section>
+        <section className="container">
             <Sidebar />
             <Tasks />
         </section>
