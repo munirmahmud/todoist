@@ -11,7 +11,7 @@ export const SingleProject = ({project}) => {
     const deleteProject = docId => {
         firebase.firestore()
             .collection('projects')
-            .doc('docId')
+            .doc(docId)
             .delete()
             .then(() => {
                 setProjects([...projects]);
@@ -38,8 +38,16 @@ export const SingleProject = ({project}) => {
 
                             <button type="button" onClick={() => deleteProject(project.docId)}>
                                 Delete
-                                <span onClick={() => setShowConfirm(showConfirm => !showConfirm)}>Cancel</span>
                             </button>
+                            <span 
+                                onClick={() => setShowConfirm(!showConfirm)}
+                                onKeyDown={(e) => {
+                                    if(e.key === 'Enter') setShowConfirm(!showConfirm);
+                                }}
+                                tabIndex={0}
+                                role="button"
+                                aria-label="Cancel adding project, do not delete"
+                            >Cancel</span>
                         </div>
                     </div>
                 )}

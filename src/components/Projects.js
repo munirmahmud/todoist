@@ -14,7 +14,9 @@ export const Projects = ({activeValue = null}) => {
                 data-doc-id={project.docId} 
                 data-testid="project-action" 
                 className={active === project.projectId ? 'sidebar__project active' : 'sidebar__project'} onClick={() => {setActive(project.projectId);setSelectedProject(project.projectId)}}>
-                    <SingleProject project={project} />
+                    <div className="inner">
+                        <SingleProject project={project} />
+                    </div>
             </li>
         ))
     );
